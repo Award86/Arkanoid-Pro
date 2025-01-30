@@ -1,0 +1,19 @@
+#:kivy 2.3.0
+#:include ui/game_ui.kv
+
+<RootWidget>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<GameScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Level: {}'.format(root.engine.current_level)
+            font_size: 24
+        Widget:
+            id: game_area
